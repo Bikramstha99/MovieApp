@@ -9,10 +9,10 @@ using MovieApp.Repository.Interface;
 
 namespace MovieApplication.Repository.Implementations
 {
-    public class Movie : IMovie
+    public class MovieRepo : IMovieRepo
     {
         private readonly MovieDbContext _moviedbcontext;
-        public Movie(MovieDbContext moviedbcontext)
+        public MovieRepo(MovieDbContext moviedbcontext)
         {
             _moviedbcontext = moviedbcontext;
 
@@ -34,7 +34,7 @@ namespace MovieApplication.Repository.Implementations
             return true;
         }
 
-        public UpdateMovie GetByID(int Id)
+        public Movies GetByID(int Id)
         {
             var movie = _moviedbcontext.Movies.Find(Id);
             var viewmodel = new UpdateMovie()
@@ -45,7 +45,7 @@ namespace MovieApplication.Repository.Implementations
                 MoviePhoto = movie.MoviePhoto,
                 Director = movie.Director,
             };
-            return viewmodel;
+            return movie;
         }
 
         public bool UpdateMovies(UpdateMovie updatemovie)

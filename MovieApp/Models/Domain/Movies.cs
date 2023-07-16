@@ -24,6 +24,8 @@ namespace MovieApp.Models.Domain
         [Display(Name = "Insert an Image")]
         public string MoviePhoto { get; set; }
 
+        public List<Comment> Comments { get; set; }
+
 
 
     }

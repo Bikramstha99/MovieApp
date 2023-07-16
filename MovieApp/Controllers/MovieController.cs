@@ -1,18 +1,24 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using MovieApp.Models.Domain;
+using MovieApp.Models.Dto.Comment;
 using MovieApp.Models.Dto.Movie;
+using MovieApp.Repository.Implementation;
 using MovieApp.Repository.Interface;
+using System.Xml.Linq;
 
 namespace MovieApp.Controllers
 {
     public class MovieController : Controller
     {
-        private readonly IMovie _IMovie;
+        private readonly IMovieRepo _IMovie;
         private readonly IWebHostEnvironment _iwebhostenvironment;
+        private readonly ICommentRepo _iComment;
 
-        public MovieController(IMovie imovie, IWebHostEnvironment iwebhostenvironment)
+        public MovieController(IMovieRepo imovie, IWebHostEnvironment iwebhostenvironment,ICommentRepo iComment)
         {
             _IMovie = imovie;
             _iwebhostenvironment = iwebhostenvironment;
+            _iComment = iComment;
         }
         [HttpGet]
         public IActionResult Index()
@@ -88,9 +94,8 @@ namespace MovieApp.Controllers
         public IActionResult Details(int id)
         {
             var movie = _IMovie.GetByID(id);
+            ViewBag.Comments = _iComment.GetComments(id);
             return View(movie);
         }
-
-
     }
 }

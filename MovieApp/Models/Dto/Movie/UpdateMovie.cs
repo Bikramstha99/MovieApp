@@ -1,4 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using MovieApp.Models.Domain;
+using MovieApp.Models.Dto.Comment;
+using System.ComponentModel.DataAnnotations;
 
 namespace MovieApp.Models.Dto.Movie
 {
@@ -19,5 +21,6 @@ namespace MovieApp.Models.Dto.Movie
 
         [Display(Name = "Insert an Image")]
         public string MoviePhoto { get; set; }
+
     }
 }

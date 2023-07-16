@@ -1,0 +1,120 @@
+﻿@model MovieApp.Models.Domain.Movies
+@using MovieApp.Models
+
+@using Microsoft.AspNetCore.Identity;
+@inject UserManager<IdentityUser> userManager;
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>UpdateMovie</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+        <dd>
+            <img src="@Model.MoviePhoto" style="width: 220px; height: 250px; cursor:pointer" />
+        </dd>
+        <dt>
+        <br />
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Genre)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Genre)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Director)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Director)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Year)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Year)
+        </dd>
+
+        
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
+
+<hr />
+
+<form method="post" asp-controller="Rating" asp-action="Create">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+            <style>
+                .checked {
+                    color: orange;
+                }
+            </style>
+            <div id="rate" class="rating">
+                <input type="radio" id="star5" name="rating" value="5" class="fa fa-star checked " />
+                <label for="star5" title="5 stars"></label>
+                <input type="radio" id="star4" name="rating" value="4" class="fa fa-star checked " />
+                <label for="star4" title="4 stars"></label>
+                <input type="radio" id="star3" name="rating" value="3" class="fa fa-star checked " />
+                <label for="star3" title="3 stars"></label>
+                <input type="radio" id="star2" name="rating" value="2" class="fa fa-star  " />
+                <label for="star2" title="2 stars"></label>
+                <input type="radio" id="star1" name="rating" value="1" class="fa fa-star  " />
+                <label for="star1" title="1 stars"></label>
+            </div>
+            <input type="hidden" name="MovieId" value="@Model.Id" />
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+
+<div class="card card-outline-secondary my-4">
+<div class="card-header">
+    <b>Comment Section</b>
+</div>
+<div class="card-body">
+    <div>
+        @if (ViewBag.Comments == null || ViewBag.Comments.Count == 0)
+        {
+            <p>No comments available.</p>
+        }
+        else
+        {
+        @foreach (var comment in ViewBag.Comments)
+        {
+            <div>
+                <p>@comment.CommentDesc</p>
+                <small class="text-muted">Posted By @comment.IdentityUser.UserName on @comment.TimeStamp</small>
+                <br>
+                <a class="btn-color-blue align-text-bottom" asp-action="Edit" asp-controller="Comment" asp-route-id="@comment.CommentId">Edit</a> |
+                <a class="btn-color" asp-action="Delete" asp-controller="Comment" asp-route-id="@comment.CommentId">Delete</a>
+
+                <hr>
+            </div>
+        }
+        }
+    </div>
+</div>
+</div>
+
+    <form id="commentForm" method="post" asp-action="Create" asp-controller="Comment">
+        <div class="form-group">
+            <input type="hidden" name="MovieId" value="@Model.Id" />
+            <label class="fw-bold">Write Your Comment.</label>
+            <textarea class="form-control" rows="3" name="CommentDesc" placeholder="Comments are written here :)"></textarea>
+        </div>
+        <br />
+        <button type="submit" class="btn btn-success" id="btnComment">Leave Your Comment</button>
+    </form>
+
+    

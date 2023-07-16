@@ -3,9 +3,12 @@ using MovieApp.Data;
 using MovieApp.Repository.Interface;
 using MovieApplication.Repository.Implementations;
 using Microsoft.AspNetCore.Identity;
+using MovieApplication.Repository.Interfaces;
+using MovieListing.Areas.Identity.Data;
+using MovieApp.Repository.Implementation;
 
 var builder = WebApplication.CreateBuilder(args);
-var connectionString = builder.Configuration.GetConnectionString("MovieDbContextConnection") ?? throw new InvalidOperationException("Connection string 'MovieDbContextConnection' not found.");
+
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
@@ -13,10 +16,15 @@ builder.Services.AddDbContext<MovieDbContext>(options =>
     options.UseSqlServer(builder.Configuration
     .GetConnectionString("MvcConnectionString")));
 
-builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-    .AddEntityFrameworkStores<MovieDbContext>();
 
-builder.Services.AddScoped<IMovie, Movie>();
+
+builder.Services.AddDefaultIdentity<IdentityUser>().AddDefaultTokenProviders()
+    .AddRoles<IdentityRole>()
+    .AddEntityFrameworkStores<MovieDbContext>();
+builder.Services.AddScoped<IDbInitializerRepo, DbInitializer>();
+builder.Services.AddScoped<ICommentRepo, CommentRepo>();
+
+builder.Services.AddScoped<IMovieRepo, MovieRepo>();
 
 var app = builder.Build();
 
@@ -35,9 +43,20 @@ app.UseRouting();
 app.UseAuthentication();;
 
 app.UseAuthorization();
+app.MapRazorPages();
 
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
+SeedDatabase();
+
 app.Run();
+void SeedDatabase()
+{
+    using (var scope = app.Services.CreateScope())
+    {
+        var dbInitializer = scope.ServiceProvider.GetRequiredService<IDbInitializerRepo>();
+        dbInitializer.Initalizer();
+    }
+}
