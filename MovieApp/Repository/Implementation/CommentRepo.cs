@@ -31,9 +31,17 @@ namespace MovieApp.Repository.Implementation
             _movieDbContext.SaveChanges();
             return true;
         }
-        public List<Comment> GetComments(int MovieId)
+        public List<UpdateComment> GetComments(int MovieId)
         {
-            var data = _movieDbContext.Comments.Include(e => e.IdentityUser).Where(c => c.MovieId == MovieId).ToList();
+            var data = _movieDbContext.Comments.Include(e => e.IdentityUser).Where(c => c.MovieId == MovieId).Select(d=>new UpdateComment
+            {
+                MovieId = d.MovieId,
+                IdentityUser = d.IdentityUser,
+                UserId = d.UserId,
+                CommentDesc = d.CommentDesc,
+                CommentId = d.CommentId,
+                TimeStamp=d.TimeStamp,
+            }).ToList();
             return data;
 
         }
@@ -51,9 +59,11 @@ namespace MovieApp.Repository.Implementation
             var comments = _movieDbContext.Comments.Find(CommentId);
             var comment = new UpdateComment()
             {
+                TimeStamp = DateTime.Now,
                 CommentId = comments.CommentId,
                 CommentDesc = comments.CommentDesc,
                 UserId = comments.UserId,
+                MovieId=comments.MovieId,
 
             };
             return comment;

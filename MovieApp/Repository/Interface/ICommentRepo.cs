@@ -10,6 +10,6 @@ namespace MovieApp.Repository.Interface
         bool DeleteComments(UpdateComment deletecomment);
         bool UpdateComments(UpdateComment updatecomment);
         UpdateComment GetById(int CommentId);
-        List<Models.Domain.Comment> GetComments(int MovieId);
+        List<UpdateComment> GetComments(int MovieId);
     }
 }

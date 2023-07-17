@@ -34,7 +34,7 @@ namespace MovieApplication.Repository.Implementations
             return true;
         }
 
-        public Movies GetByID(int Id)
+        public UpdateMovie GetByID(int Id)
         {
             var movie = _moviedbcontext.Movies.Find(Id);
             var viewmodel = new UpdateMovie()
@@ -45,7 +45,7 @@ namespace MovieApplication.Repository.Implementations
                 MoviePhoto = movie.MoviePhoto,
                 Director = movie.Director,
             };
-            return movie;
+            return viewmodel;
         }
 
         public bool UpdateMovies(UpdateMovie updatemovie)
@@ -73,7 +73,6 @@ namespace MovieApplication.Repository.Implementations
             var movies = _moviedbcontext.Movies.ToList();
             return movies;
         }
-      
     }
 }
 

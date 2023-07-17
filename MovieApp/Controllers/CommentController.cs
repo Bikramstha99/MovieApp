@@ -51,13 +51,21 @@ namespace MovieApp.Controllers
             _iComment.UpdateComments(updatecomment);
             return RedirectToAction("Details","Movie", new { id = updatecomment.MovieId });
         }
-        
+
+        [HttpGet]
+        public IActionResult Delete(int CommentId)
+        {
+            var comment = _iComment.GetById(CommentId);
+            return View(comment);
+
+        }
+
         [HttpPost]
         public IActionResult Delete(UpdateComment deletecomment)
         {
             _iComment.DeleteComments(deletecomment);
-
-            return RedirectToAction("Index");
+            return RedirectToAction("Details", "Movie", new { id = deletecomment.MovieId });
+            
         }
 
 

@@ -8,7 +8,7 @@ namespace MovieApp.Repository.Interface
         bool AddMovies(AddMovie addmovie);
         bool UpdateMovies(UpdateMovie updatemovie);
         bool DeleteMovies(UpdateMovie deletemovie);
-        Movies GetByID(int Id);
+        UpdateMovie GetByID(int Id);
         List<Movies> GetAllMovies();
 
     }

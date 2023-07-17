@@ -21,6 +21,7 @@ namespace MovieApp.Models.Dto.Movie
 
         [Display(Name = "Insert an Image")]
         public string MoviePhoto { get; set; }
+        public List<UpdateComment> Comments { get; set; }
 
     }
 }

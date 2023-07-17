@@ -21,5 +21,6 @@ namespace MovieApp.Models.Dto.Comment
         public Movies Movies { get; set; }
 
         public string? CommentDesc { get; set; }
+        public DateTime TimeStamp { get; set; }
     }
 }

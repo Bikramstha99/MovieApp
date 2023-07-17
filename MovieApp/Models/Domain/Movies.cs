@@ -26,7 +26,5 @@ namespace MovieApp.Models.Domain
 
         public List<Comment> Comments { get; set; }
 
-
-
     }
 }
