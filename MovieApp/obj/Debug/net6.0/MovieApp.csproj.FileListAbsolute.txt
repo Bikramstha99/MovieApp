@@ -14,6 +14,7 @@ C:\Users\Acer\OneDrive\Desktop\C# console app\MovieApp\MovieApp\bin\Debug\net6.0
 C:\Users\Acer\OneDrive\Desktop\C# console app\MovieApp\MovieApp\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.Internal.dll
 C:\Users\Acer\OneDrive\Desktop\C# console app\MovieApp\MovieApp\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
 C:\Users\Acer\OneDrive\Desktop\C# console app\MovieApp\MovieApp\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\Acer\OneDrive\Desktop\C# console app\MovieApp\MovieApp\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.UI.dll
 C:\Users\Acer\OneDrive\Desktop\C# console app\MovieApp\MovieApp\bin\Debug\net6.0\Microsoft.AspNetCore.Razor.Language.dll
 C:\Users\Acer\OneDrive\Desktop\C# console app\MovieApp\MovieApp\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\Acer\OneDrive\Desktop\C# console app\MovieApp\MovieApp\bin\Debug\net6.0\Microsoft.Build.dll
@@ -41,6 +42,7 @@ C:\Users\Acer\OneDrive\Desktop\C# console app\MovieApp\MovieApp\bin\Debug\net6.0
 C:\Users\Acer\OneDrive\Desktop\C# console app\MovieApp\MovieApp\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
 C:\Users\Acer\OneDrive\Desktop\C# console app\MovieApp\MovieApp\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
 C:\Users\Acer\OneDrive\Desktop\C# console app\MovieApp\MovieApp\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\Acer\OneDrive\Desktop\C# console app\MovieApp\MovieApp\bin\Debug\net6.0\Microsoft.Extensions.FileProviders.Embedded.dll
 C:\Users\Acer\OneDrive\Desktop\C# console app\MovieApp\MovieApp\bin\Debug\net6.0\Microsoft.Extensions.Identity.Core.dll
 C:\Users\Acer\OneDrive\Desktop\C# console app\MovieApp\MovieApp\bin\Debug\net6.0\Microsoft.Extensions.Identity.Stores.dll
 C:\Users\Acer\OneDrive\Desktop\C# console app\MovieApp\MovieApp\bin\Debug\net6.0\Microsoft.Extensions.Logging.dll
@@ -251,6 +253,7 @@ C:\Users\Acer\OneDrive\Desktop\C# console app\MovieApp\MovieApp\obj\Debug\net6.0
 C:\Users\Acer\OneDrive\Desktop\C# console app\MovieApp\MovieApp\obj\Debug\net6.0\MovieApp.AssemblyInfoInputs.cache
 C:\Users\Acer\OneDrive\Desktop\C# console app\MovieApp\MovieApp\obj\Debug\net6.0\MovieApp.AssemblyInfo.cs
 C:\Users\Acer\OneDrive\Desktop\C# console app\MovieApp\MovieApp\obj\Debug\net6.0\MovieApp.csproj.CoreCompileInputs.cache
+C:\Users\Acer\OneDrive\Desktop\C# console app\MovieApp\MovieApp\obj\Debug\net6.0\MovieApp.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Acer\OneDrive\Desktop\C# console app\MovieApp\MovieApp\obj\Debug\net6.0\MovieApp.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Acer\OneDrive\Desktop\C# console app\MovieApp\MovieApp\obj\Debug\net6.0\MovieApp.RazorAssemblyInfo.cache
 C:\Users\Acer\OneDrive\Desktop\C# console app\MovieApp\MovieApp\obj\Debug\net6.0\MovieApp.RazorAssemblyInfo.cs
@@ -270,6 +273,4 @@ C:\Users\Acer\OneDrive\Desktop\C# console app\MovieApp\MovieApp\obj\Debug\net6.0
 C:\Users\Acer\OneDrive\Desktop\C# console app\MovieApp\MovieApp\obj\Debug\net6.0\MovieApp.pdb
 C:\Users\Acer\OneDrive\Desktop\C# console app\MovieApp\MovieApp\obj\Debug\net6.0\MovieApp.genruntimeconfig.cache
 C:\Users\Acer\OneDrive\Desktop\C# console app\MovieApp\MovieApp\obj\Debug\net6.0\ref\MovieApp.dll
-C:\Users\Acer\OneDrive\Desktop\C# console app\MovieApp\MovieApp\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.UI.dll
-C:\Users\Acer\OneDrive\Desktop\C# console app\MovieApp\MovieApp\bin\Debug\net6.0\Microsoft.Extensions.FileProviders.Embedded.dll
-C:\Users\Acer\OneDrive\Desktop\C# console app\MovieApp\MovieApp\obj\Debug\net6.0\MovieApp.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Acer\OneDrive\Desktop\C# console app\MovieApp\MovieApp\bin\Debug\net6.0\libman.json

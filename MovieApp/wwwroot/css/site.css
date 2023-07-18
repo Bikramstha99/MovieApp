@@ -16,3 +16,19 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.rating {
+    display: inline-block;
+}
+
+.star {
+    display: inline-block;
+    font-size: 24px;
+    color: #ddd;
+    cursor: pointer;
+}
+
+    .star:hover,
+    .star.active {
+        color: gold;
+    }

@@ -1,5 +1,6 @@
 ﻿@model MovieApp.Models.Dto.Movie.UpdateMovie
-@using MovieApp.Models.Dto.Comment
+@using MovieApp.Enum;
+@using MovieApp.Models.Dto
 
 @using Microsoft.AspNetCore.Identity;
 @inject UserManager<IdentityUser> userManager;
@@ -49,9 +50,19 @@
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    @if (User.IsInRole(UserRole.Admin.ToString()) || User.IsInRole(UserRole.Admin.ToString()))
+    {
+        <br />
+        <div>
+           
+            <a asp-action="Edit" class="btn btn-secondary" asp-route-id="@Model?.Id">Edit</a>
+            <a asp-action="Delete" class="btn btn-danger" asp-route-id="@Model.Id">Delete</a>
+        </div>
+    }
 </div>
+
+
+ <partial name="../Rating/_AddRating" model="@Model?.Id" />    
 
 <hr />
 
@@ -67,6 +78,7 @@
                 <p>@comment.CommentDesc</p>
                 <small class="text-muted">Posted By @comment.CommentId @comment.IdentityUser.UserName on @comment.TimeStamp </small>
                 <br>
+                  
                   
                 <a class="btn-color-blue align-text-bottom" asp-action="Edit" asp-controller="Comment" asp-route-CommentId="@comment.CommentId">Edit</a> |
                 <a class="btn-color" asp-action="Delete" asp-controller="Comment" asp-route-Commentid="@comment.CommentId">Delete</a>
@@ -87,5 +99,45 @@
         <br />
         <button type="submit" class="btn btn-success" id="btnComment">Leave Your Comment</button>
     </form>
+
+@section Scripts{
+    <script>
+
+        $(document).ready(function () {
+            $('input[type="radio"]').click(function () {
+                $('#submitRatingButton').show();
+            });
+        });
+        $(document).ready(function () {
+            $('#submitRatingButton').click(function (event) {
+                event.preventDefault();
+
+                var rating = $('input[name="rating"]:checked').val();
+
+                var movieId = $('input[name="MovieId"]').val();
+                var data = {
+                    MovieId: movieId,
+                    Ratings: rating                  
+                };
+                $.ajax({
+                    url: '@Url.Action("SubmitRating", "Rating")',
+                    type: 'POST',
+                    data: data,
+                    success: function (response) {
+                        // Handle the success response
+                        $('#RatingForm').hide();
+                        $('#AverageRating').html(response);
+                    },
+                    error: function (xhr, status, error) {
+                        // Handle the error response
+                        console.log(error);
+                    }
+                });
+            });
+        });
+    </script>
+}
+
+    
 
     

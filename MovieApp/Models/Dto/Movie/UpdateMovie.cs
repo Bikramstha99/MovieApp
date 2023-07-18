@@ -1,5 +1,7 @@
-﻿using MovieApp.Models.Domain;
+﻿using Microsoft.Build.Framework;
+using MovieApp.Models.Domain;
 using MovieApp.Models.Dto.Comment;
+using MovieApp.Models.Dto.Rating;
 using System.ComponentModel.DataAnnotations;
 
 namespace MovieApp.Models.Dto.Movie
@@ -8,20 +10,23 @@ namespace MovieApp.Models.Dto.Movie
     {
         [Key]
         public int Id { get; set; }
-        [Required]
+        [System.ComponentModel.DataAnnotations.Required]
         public string Name { get; set; }
-        [Required]
+        [System.ComponentModel.DataAnnotations.Required]
         public string Genre { get; set; }
 
-        [Required]
+        [System.ComponentModel.DataAnnotations.Required]
         public string Director { get; set; }
-        [Required]
+        [System.ComponentModel.DataAnnotations.Required]
         public int Year { get; set; }
 
 
         [Display(Name = "Insert an Image")]
         public string MoviePhoto { get; set; }
         public List<UpdateComment> Comments { get; set; }
+        public List<AddRating>Ratings { get; set; }
+         
+        public AddRating? Rat{ get; set; }
 
     }
 }

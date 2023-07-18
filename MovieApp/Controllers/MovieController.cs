@@ -95,6 +95,7 @@ namespace MovieApp.Controllers
         {
             var movie = _IMovie.GetByID(id);
             ViewBag.Comments = _iComment.GetComments(id);
+            
             return View(movie);
         }
     }

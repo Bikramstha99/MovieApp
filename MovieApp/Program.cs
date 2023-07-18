@@ -23,7 +23,7 @@ builder.Services.AddDefaultIdentity<IdentityUser>().AddDefaultTokenProviders()
     .AddEntityFrameworkStores<MovieDbContext>();
 builder.Services.AddScoped<IDbInitializerRepo, DbInitializer>();
 builder.Services.AddScoped<ICommentRepo, CommentRepo>();
-
+builder.Services.AddScoped<IRating, RatingRepo>();
 builder.Services.AddScoped<IMovieRepo, MovieRepo>();
 
 var app = builder.Build();

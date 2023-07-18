@@ -5,8 +5,8 @@ namespace MovieApp.Repository.Interface
 {
     public interface IRating
     {
-        Task AddRating(AddRating addrating);
-        
-        int RatingCount(Guid MovieId);
+        bool AddRating(AddRating addrating);
+
+        List<AddRating> Ratings(int MovieId);
     }
 }

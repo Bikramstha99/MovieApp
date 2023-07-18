@@ -5,8 +5,8 @@ namespace MovieApp.Models.Domain
 {
     public class Rating
     {
-        public int Id { get; set; }
-        public int RatingAvg { get; set; }
+        public int RatingId { get; set; }
+        public int Ratings { get; set; }
 
         [ForeignKey("Movies")]
         public int MovieId { get; set; }
