@@ -13,12 +13,18 @@ namespace MovieApp.Controllers
         private readonly IMovieRepo _IMovie;
         private readonly IWebHostEnvironment _iwebhostenvironment;
         private readonly ICommentRepo _iComment;
+        private readonly IRating _iRating;
 
-        public MovieController(IMovieRepo imovie, IWebHostEnvironment iwebhostenvironment,ICommentRepo iComment)
+        public MovieController(
+            IMovieRepo imovie, 
+            IWebHostEnvironment iwebhostenvironment,
+            ICommentRepo iComment,
+            IRating iRating)
         {
             _IMovie = imovie;
             _iwebhostenvironment = iwebhostenvironment;
             _iComment = iComment;
+            _iRating = iRating;
         }
         [HttpGet]
         public IActionResult Index()
@@ -95,6 +101,7 @@ namespace MovieApp.Controllers
         {
             var movie = _IMovie.GetByID(id);
             ViewBag.Comments = _iComment.GetComments(id);
+            ViewBag.Ratings = _iRating.GetRatings(id);
             
             return View(movie);
         }

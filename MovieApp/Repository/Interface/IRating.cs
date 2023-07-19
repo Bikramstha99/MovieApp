@@ -6,7 +6,8 @@ namespace MovieApp.Repository.Interface
     public interface IRating
     {
         bool AddRating(AddRating addrating);
-
-        List<AddRating> Ratings(int MovieId);
+        bool UpdateRating(AddRating addrating);
+        int GetRatingByUserIdAndMovieId(string UserId, int MovieId);
+        List<AddRating> GetRatings(int MovieId);
     }
 }

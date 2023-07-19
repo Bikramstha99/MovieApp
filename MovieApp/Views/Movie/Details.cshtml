@@ -124,9 +124,24 @@
                     type: 'POST',
                     data: data,
                     success: function (response) {
-                        // Handle the success response
-                        $('#RatingForm').hide();
-                        $('#AverageRating').html(response);
+                        var $responseHtml = $(response);
+                        var $newRating = $responseHtml.find('#ratingList > div:last-child');
+
+                        if ($newRating.length > 0) {
+                            var updatedRatingId = $newRating.find('div').data('rating-id');
+                            var newRatingValue = $newRating.find('p').text();
+
+                            // Find the existing rating element based on movie ID and rating ID
+                            var $existingRating = $('#ratingList').find(`div[data-rating-id="${updatedRatingId}"]`);
+
+                            if ($existingRating.length > 0) {
+                                // Update the existing rating value
+                                $existingRating.find('p').text(newRatingValue);
+                            } else {
+                                // Create a new rating element
+                                $('#ratingList').append($newRating);
+                            }
+                        }
                     },
                     error: function (xhr, status, error) {
                         // Handle the error response
