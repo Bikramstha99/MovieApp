@@ -65,8 +65,14 @@ namespace MovieApp.Repository.Implementation
             rating.Ratings=addrating.Ratings;
             _movieDbContext.Ratings.Update(rating);
             _movieDbContext.SaveChanges();
-            return true;
-           
+            return true;   
+        }
+
+        public double GetAverageRating(int MovieId)
+        {
+            double averageRating = _movieDbContext.Ratings.Where(r => r.MovieId == MovieId).Average(r => r.Ratings);
+
+            return averageRating;
 
         }
     }

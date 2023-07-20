@@ -2,8 +2,10 @@
 using MovieApp.Models.Domain;
 using MovieApp.Models.Dto.Comment;
 using MovieApp.Models.Dto.Movie;
+using MovieApp.Models.Dto.Pager;
 using MovieApp.Repository.Implementation;
 using MovieApp.Repository.Interface;
+using System.Drawing.Printing;
 using System.Xml.Linq;
 
 namespace MovieApp.Controllers
@@ -27,10 +29,29 @@ namespace MovieApp.Controllers
             _iRating = iRating;
         }
         [HttpGet]
-        public IActionResult Index()
+        public IActionResult Index(int? page)
         {
-            var data = _IMovie.GetAllMovies();
-            return View(data);
+            int pageNumber = page ?? 1;
+            int pageSize = 3;
+            var movies = _IMovie.GetAllMovies();
+
+            int totalMovies = movies.Count;
+            int totalPages = (int)Math.Ceiling(totalMovies / (double)pageSize);
+
+            //starting index of each page
+            int startIndex = (pageNumber - 1) * pageSize;
+
+            //skip skips first specified number of data and take takes the specified number of data
+            var pagedMovies = movies.Skip(startIndex).Take(pageSize).ToList();
+            var pager= new PagerVM
+            {
+                Movies = pagedMovies,
+                PageNumber = pageNumber,
+                PageSize = pageSize,
+                TotalMovies = totalMovies,
+                TotalPages = totalPages
+            };
+            return View(pager);
         }
         [HttpGet]
         public IActionResult Create()

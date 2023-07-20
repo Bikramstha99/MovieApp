@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using MovieApp.Data;
 using MovieApp.Models.Domain;
+using MovieApp.Models.Dto.Comment;
 using MovieApp.Models.Dto.Movie;
 using MovieApp.Repository.Interface;
 
@@ -44,6 +45,7 @@ namespace MovieApplication.Repository.Implementations
                 Genre = movie.Genre,
                 MoviePhoto = movie.MoviePhoto,
                 Director = movie.Director,
+                AverageRating = movie.AverageRating,
             };
             return viewmodel;
         }
@@ -56,6 +58,7 @@ namespace MovieApplication.Repository.Implementations
             movie.Genre = updatemovie.Genre;
             movie.MoviePhoto = updatemovie.MoviePhoto;
             movie.Director = updatemovie.Director;
+            movie.AverageRating=updatemovie.AverageRating;
             _moviedbcontext.SaveChanges();
             return true;
         }
@@ -68,11 +71,21 @@ namespace MovieApplication.Repository.Implementations
             return true;
         }
 
-        public List<Movies> GetAllMovies()
+        public List<UpdateMovie> GetAllMovies()
         {
-            var movies = _moviedbcontext.Movies.ToList();
-            return movies;
+            var data = _moviedbcontext.Movies.Select(d => new UpdateMovie
+            {
+                Id = d.Id,
+                Name = d.Name,
+                Genre = d.Genre,
+                Director = d.Director,
+                Year = d.Year,
+                MoviePhoto = d.MoviePhoto
+            }).ToList();
+            return data;
         }
+
+        
     }
 }
 

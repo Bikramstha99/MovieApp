@@ -22,6 +22,7 @@ namespace MovieApp.Models.Domain
 
 
         [Display(Name = "Insert an Image")]
+        public double AverageRating { get; set; }
         public string MoviePhoto { get; set; }
 
         public List<Comment> Comments { get; set; }

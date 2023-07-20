@@ -13,8 +13,24 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\Acer\\OneDrive\\Desktop\\C# console app\\MovieApp\\MovieApp\\wwwroot\\images\\1f0ee981-8681-498a-b7a1-eef46b7452dc.jpg",
+      "PackagePath": "staticwebassets\\images\\1f0ee981-8681-498a-b7a1-eef46b7452dc.jpg"
+    },
+    {
       "Id": "C:\\Users\\Acer\\OneDrive\\Desktop\\C# console app\\MovieApp\\MovieApp\\wwwroot\\images\\2e894058-20df-46a5-9fb0-aae53380022f.jpg",
       "PackagePath": "staticwebassets\\images\\2e894058-20df-46a5-9fb0-aae53380022f.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Acer\\OneDrive\\Desktop\\C# console app\\MovieApp\\MovieApp\\wwwroot\\images\\7a4bad9d-5b0d-4410-8cdb-8c34815fe45b.jpg",
+      "PackagePath": "staticwebassets\\images\\7a4bad9d-5b0d-4410-8cdb-8c34815fe45b.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Acer\\OneDrive\\Desktop\\C# console app\\MovieApp\\MovieApp\\wwwroot\\images\\7d4f3272-0c1d-4d78-8f18-fbb053f38f98.jpg",
+      "PackagePath": "staticwebassets\\images\\7d4f3272-0c1d-4d78-8f18-fbb053f38f98.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Acer\\OneDrive\\Desktop\\C# console app\\MovieApp\\MovieApp\\wwwroot\\images\\f0fbdc4b-6d06-4956-9189-c8797f4132e3.jpg",
+      "PackagePath": "staticwebassets\\images\\f0fbdc4b-6d06-4956-9189-c8797f4132e3.jpg"
     },
     {
       "Id": "C:\\Users\\Acer\\OneDrive\\Desktop\\C# console app\\MovieApp\\MovieApp\\wwwroot\\js\\site.js",
