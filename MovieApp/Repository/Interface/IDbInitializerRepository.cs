@@ -1,6 +1,6 @@
 ﻿namespace MovieApplication.Repository.Interfaces
     {
-        public interface IDbInitializerRepo
+        public interface IDbInitializerRepository
         {
             Task Initalizer();
         }

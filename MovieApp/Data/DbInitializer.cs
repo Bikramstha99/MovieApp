@@ -7,7 +7,7 @@ using MovieApplication.Repository.Interfaces;
 
 namespace MovieListing.Areas.Identity.Data
 {
-    public class DbInitializer : IDbInitializerRepo
+    public class DbInitializer : IDbInitializerRepository
     {
         private readonly MovieDbContext _dbContext;
         private readonly UserManager<IdentityUser> _userManager;

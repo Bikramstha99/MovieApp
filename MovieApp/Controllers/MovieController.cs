@@ -12,15 +12,15 @@ namespace MovieApp.Controllers
 {
     public class MovieController : Controller
     {
-        private readonly IMovieRepo _IMovie;
+        private readonly IMovieRepository _IMovie;
         private readonly IWebHostEnvironment _iwebhostenvironment;
-        private readonly ICommentRepo _iComment;
+        private readonly ICommentRepository _iComment;
         private readonly IRating _iRating;
 
         public MovieController(
-            IMovieRepo imovie, 
+            IMovieRepository imovie, 
             IWebHostEnvironment iwebhostenvironment,
-            ICommentRepo iComment,
+            ICommentRepository iComment,
             IRating iRating)
         {
             _IMovie = imovie;
@@ -111,9 +111,9 @@ namespace MovieApp.Controllers
 
         }
         [HttpPost]
-        public IActionResult Delete(UpdateMovie deletemovie)
+        public IActionResult DeleteId(int Id)
         {
-            _IMovie.DeleteMovies(deletemovie);
+            _IMovie.DeleteMovies(Id);
 
             return RedirectToAction("Index");
         }

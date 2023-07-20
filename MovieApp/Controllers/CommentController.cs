@@ -12,9 +12,9 @@ namespace MovieApp.Controllers
     public class CommentController : Controller
     {
         private readonly UserManager<IdentityUser> _userManager;
-        private readonly ICommentRepo _iComment;
+        private readonly ICommentRepository _iComment;
 
-        public CommentController(UserManager<IdentityUser> userManager, ICommentRepo iComment)
+        public CommentController(UserManager<IdentityUser> userManager, ICommentRepository iComment)
         {
             _userManager = userManager;
             _iComment = iComment;

@@ -7,11 +7,11 @@ using MovieApp.Repository.Interface;
 
 namespace MovieApp.Repository.Implementation
 {
-    public class RatingRepo : IRating
+    public class RatingRepository : IRating
     {
         private readonly MovieDbContext _movieDbContext;
 
-        public RatingRepo(MovieDbContext movieDbContext)
+        public RatingRepository(MovieDbContext movieDbContext)
         {
             _movieDbContext = movieDbContext;
         }

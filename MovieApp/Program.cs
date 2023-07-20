@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Identity;
 using MovieApplication.Repository.Interfaces;
 using MovieListing.Areas.Identity.Data;
 using MovieApp.Repository.Implementation;
+using MovieApp.Repository.SPImplementation;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -21,10 +22,12 @@ builder.Services.AddDbContext<MovieDbContext>(options =>
 builder.Services.AddDefaultIdentity<IdentityUser>().AddDefaultTokenProviders()
     .AddRoles<IdentityRole>()
     .AddEntityFrameworkStores<MovieDbContext>();
-builder.Services.AddScoped<IDbInitializerRepo, DbInitializer>();
-builder.Services.AddScoped<ICommentRepo, CommentRepo>();
-builder.Services.AddScoped<IRating, RatingRepo>();
-builder.Services.AddScoped<IMovieRepo, MovieRepo>();
+
+
+builder.Services.AddScoped<IDbInitializerRepository, DbInitializer>();
+builder.Services.AddScoped<ICommentRepository, CommentRepository>();
+builder.Services.AddScoped<IRating, RatingRepository>();
+builder.Services.AddScoped<IMovieRepository, SPMovieRepository>();
 
 var app = builder.Build();
 
@@ -56,7 +59,7 @@ void SeedDatabase()
 {
     using (var scope = app.Services.CreateScope())
     {
-        var dbInitializer = scope.ServiceProvider.GetRequiredService<IDbInitializerRepo>();
+        var dbInitializer = scope.ServiceProvider.GetRequiredService<IDbInitializerRepository>();
         dbInitializer.Initalizer();
     }
 }

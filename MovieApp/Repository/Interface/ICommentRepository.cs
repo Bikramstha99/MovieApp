@@ -4,7 +4,7 @@ using MovieApp.Repository.Implementation;
 
 namespace MovieApp.Repository.Interface
 {
-    public interface ICommentRepo
+    public interface ICommentRepository
     {
         bool AddComments(AddComment addcomment);
         bool DeleteComments(UpdateComment deletecomment);

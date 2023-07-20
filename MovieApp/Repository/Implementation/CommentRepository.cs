@@ -7,12 +7,12 @@ using MovieApplication.Repository.Implementations;
 
 namespace MovieApp.Repository.Implementation
 {
-    public class CommentRepo : ICommentRepo
+    public class CommentRepository : ICommentRepository
     {
         private readonly MovieDbContext _movieDbContext;
 
 
-        public CommentRepo(MovieDbContext movieDbContext)
+        public CommentRepository(MovieDbContext movieDbContext)
         {
             _movieDbContext = movieDbContext;
         }

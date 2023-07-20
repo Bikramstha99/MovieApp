@@ -10,10 +10,10 @@ using MovieApp.Repository.Interface;
 
 namespace MovieApplication.Repository.Implementations
 {
-    public class MovieRepo : IMovieRepo
+    public class MovieRepository : IMovieRepository
     {
         private readonly MovieDbContext _moviedbcontext;
-        public MovieRepo(MovieDbContext moviedbcontext)
+        public MovieRepository(MovieDbContext moviedbcontext)
         {
             _moviedbcontext = moviedbcontext;
 
@@ -63,9 +63,9 @@ namespace MovieApplication.Repository.Implementations
             return true;
         }
 
-        public bool DeleteMovies(UpdateMovie deletemovie)
+        public bool DeleteMovies(int Id)
         {
-            var movie = _moviedbcontext.Movies.Find(deletemovie.Id);
+            var movie = _moviedbcontext.Movies.Find(Id);
             _moviedbcontext.Movies.Remove(movie);
             _moviedbcontext.SaveChanges();
             return true;

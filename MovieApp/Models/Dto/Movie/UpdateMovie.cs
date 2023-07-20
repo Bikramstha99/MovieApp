@@ -21,7 +21,7 @@ namespace MovieApp.Models.Dto.Movie
         [System.ComponentModel.DataAnnotations.Required]
         public int Year { get; set; }
 
-
+        [DataType(DataType.Upload)]
         [Display(Name = "Insert an Image")]
         public string MoviePhoto { get; set; }
         public List<UpdateMovie> Movie { get; set; }
