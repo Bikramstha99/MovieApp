@@ -12,13 +12,13 @@ namespace MovieApp.Controllers
     {
         private readonly UserManager<IdentityUser> _userManager;
 
-        private readonly IRating _iRating;
+        private readonly IRatingRepository _iRating;
         private readonly IMovieRepository _iMovieRepo;
 
         public RatingController
             (
                 UserManager<IdentityUser> userManager,
-                IRating ratingService,
+                IRatingRepository ratingService,
                 IMovieRepository iMovieRepo
             )
         {

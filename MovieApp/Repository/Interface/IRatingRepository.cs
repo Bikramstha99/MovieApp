@@ -3,7 +3,7 @@ using MovieApp.Models.Dto.Rating;
 
 namespace MovieApp.Repository.Interface
 {
-    public interface IRating
+    public interface IRatingRepository
     {
         bool AddRating(AddRating addrating);
         bool UpdateRating(AddRating addrating);

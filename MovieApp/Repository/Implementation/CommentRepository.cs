@@ -21,6 +21,7 @@ namespace MovieApp.Repository.Implementation
         {
             var comment = new Comment()
             {
+                UserName = addcomment.UserName,
                 CommentId= addcomment.CommentId,
                 MovieId= addcomment.MovieId,
                 UserId = addcomment.UserId,
@@ -35,6 +36,7 @@ namespace MovieApp.Repository.Implementation
         {
             var data = _movieDbContext.Comments.Include(e => e.IdentityUser).Where(c => c.MovieId == MovieId).Select(d=>new UpdateComment
             {
+                UserName=d.UserName,
                 MovieId = d.MovieId,
                 IdentityUser = d.IdentityUser,
                 UserId = d.UserId,
@@ -68,9 +70,9 @@ namespace MovieApp.Repository.Implementation
             };
             return comment;
         }
-        public bool DeleteComments(UpdateComment deletecomment)
+        public bool DeleteComments(int CommentId)
         {
-            var comment = _movieDbContext.Comments.Find(deletecomment.CommentId);
+            var comment = _movieDbContext.Comments.Find(CommentId);
             _movieDbContext.Comments.Remove(comment);
             _movieDbContext.SaveChanges();
             return true;

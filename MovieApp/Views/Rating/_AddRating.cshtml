@@ -40,10 +40,9 @@
     }
 
 
-
 </style>
 
-@model int
+
 <div class="card card-outline-secondary my-4">
     <div class="card-header">
         <b>Rating Section</b>
@@ -60,7 +59,7 @@
                                 <span>&#9733;</span>
                             }
                         </p>
-                        <small class="text-muted">Posted By @rating.IdentityUser.UserName</small>
+                        <small class="text-muted">Rated By @rating.UserId</small>
                         <br>
                         <hr>
                     </div>
@@ -71,25 +70,25 @@
     </div>
 </div>
 
+@model int
 
-        <form id="ratingForm">
-            <div class="star-rating">
-                <input type="hidden" name="MovieId" value="@Model" />
-                <input type="radio" id="5-stars" name="rating" value="5" />
-                <label for="5-stars" class="star">&#9733;</label>
-                <input type="radio" id="4-stars" name="rating" value="4" />
-                <label for="4-stars" class="star">&#9733;</label>
-                <input type="radio" id="3-stars" name="rating" value="3" />
-                <label for="3-stars" class="star">&#9733;</label>
-                <input type="radio" id="2-stars" name="rating" value="2" />
-                <label for="2-stars" class="star">&#9733;</label>
-                <input type="radio" id="1-star" name="rating" value="1" />
-                <label for="1-star" class="star">&#9733;</label>
+<form id="ratingForm">
+    <div class="star-rating">
+        <input type="hidden" name="MovieId" value="@Model" />
+        <input type="radio" id="5-stars" name="rating" value="5" />
+        <label for="5-stars" class="star">&#9733;</label>
+        <input type="radio" id="4-stars" name="rating" value="4" />
+        <label for="4-stars" class="star">&#9733;</label>
+        <input type="radio" id="3-stars" name="rating" value="3" />
+        <label for="3-stars" class="star">&#9733;</label>
+        <input type="radio" id="2-stars" name="rating" value="2" />
+        <label for="2-stars" class="star">&#9733;</label>
+        <input type="radio" id="1-star" name="rating" value="1" />
+        <label for="1-star" class="star">&#9733;</label>
 
-            </div>
-            <button id="submitRatingButton" class="btn btn-primary" style=" display:none;">Submit Rating</button>
-        </form>
-   
+    </div>
+    <button id="submitRatingButton" class="btn btn-primary" style=" display:none;">Submit Rating</button>
+</form>
 
 
- 
+

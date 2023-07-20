@@ -21,5 +21,6 @@ namespace MovieApp.Models.Dto.Comment
 
 
         public DateTime TimeStamp { get; set; }
+        public string UserName { get; set; }
     }
 }

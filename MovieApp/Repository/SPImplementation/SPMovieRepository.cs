@@ -67,14 +67,23 @@ namespace MovieApp.Repository.SPImplementation
                     command.Parameters.AddWithValue("@AverageRating", updatemovie.AverageRating != null ? updatemovie.AverageRating : DBNull.Value);
                     command.Parameters.AddWithValue("@Year", updatemovie.Year);
 
+                    // Add any other parameters required by the stored procedure, if applicable
 
                     connection.Open();
-                    command.ExecuteNonQuery();
+
+                    int rowsAffected = command.ExecuteNonQuery();
+                    if (rowsAffected > 0)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
                 }
             }
-            return true;
-
         }
+
         public List<UpdateMovie> GetAllMovies()
             {
                 List<UpdateMovie> movies = new List<UpdateMovie>();
@@ -128,6 +137,7 @@ namespace MovieApp.Repository.SPImplementation
                             {
                                 movie = new UpdateMovie
                                 {
+                                    Id = (int)reader["Id"],
                                     Name = reader["Name"].ToString(),
                                     Director = reader["Director"].ToString(),
                                     Genre = reader["Genre"].ToString(),

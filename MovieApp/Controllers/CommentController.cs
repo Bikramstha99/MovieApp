@@ -30,6 +30,7 @@ namespace MovieApp.Controllers
         {
             
             addcomment.UserId = _userManager.GetUserId(User);
+            addcomment.UserName = _userManager.GetUserName(User);
             addcomment.TimeStamp = DateTime.Now;
             _iComment.AddComments(addcomment);
             TempData["Comment Addition"] = "Comment Added Successfully.";
@@ -48,6 +49,9 @@ namespace MovieApp.Controllers
         [HttpPost]
         public IActionResult Edit(UpdateComment updatecomment)
         {
+            updatecomment.UserId = _userManager.GetUserId(User);
+            updatecomment.UserName = _userManager.GetUserName(User);
+            updatecomment.TimeStamp = DateTime.Now;
             _iComment.UpdateComments(updatecomment);
             return RedirectToAction("Details","Movie", new { id = updatecomment.MovieId });
         }
@@ -61,9 +65,9 @@ namespace MovieApp.Controllers
         }
 
         [HttpPost]
-        public IActionResult Delete(UpdateComment deletecomment)
+        public IActionResult Delete(int CommentId, UpdateComment deletecomment)
         {
-            _iComment.DeleteComments(deletecomment);
+            _iComment.DeleteComments(CommentId);
             return RedirectToAction("Details", "Movie", new { id = deletecomment.MovieId });
             
         }

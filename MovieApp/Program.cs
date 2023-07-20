@@ -25,8 +25,8 @@ builder.Services.AddDefaultIdentity<IdentityUser>().AddDefaultTokenProviders()
 
 
 builder.Services.AddScoped<IDbInitializerRepository, DbInitializer>();
-builder.Services.AddScoped<ICommentRepository, CommentRepository>();
-builder.Services.AddScoped<IRating, RatingRepository>();
+builder.Services.AddScoped<ICommentRepository, SPCommentRepository>();
+builder.Services.AddScoped<IRatingRepository, SPRatingRepository>();
 builder.Services.AddScoped<IMovieRepository, SPMovieRepository>();
 
 var app = builder.Build();
@@ -50,7 +50,7 @@ app.MapRazorPages();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Movie}/{action=Index}/{id?}");
 
 SeedDatabase();
 

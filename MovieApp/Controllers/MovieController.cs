@@ -15,13 +15,13 @@ namespace MovieApp.Controllers
         private readonly IMovieRepository _IMovie;
         private readonly IWebHostEnvironment _iwebhostenvironment;
         private readonly ICommentRepository _iComment;
-        private readonly IRating _iRating;
+        private readonly IRatingRepository _iRating;
 
         public MovieController(
             IMovieRepository imovie, 
             IWebHostEnvironment iwebhostenvironment,
             ICommentRepository iComment,
-            IRating iRating)
+            IRatingRepository iRating)
         {
             _IMovie = imovie;
             _iwebhostenvironment = iwebhostenvironment;

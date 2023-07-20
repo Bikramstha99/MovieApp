@@ -7,7 +7,7 @@ using MovieApp.Repository.Interface;
 
 namespace MovieApp.Repository.Implementation
 {
-    public class RatingRepository : IRating
+    public class RatingRepository : IRatingRepository
     {
         private readonly MovieDbContext _movieDbContext;
 
@@ -21,8 +21,8 @@ namespace MovieApp.Repository.Implementation
 
             var rating = new Rating()
             {
+                MovieId= addrating.MovieId,
                 RatingId= addrating.RatingId,
-                MovieId = addrating.MovieId,
                 UserId = addrating.UserId,
                 Ratings = addrating.Ratings,
                

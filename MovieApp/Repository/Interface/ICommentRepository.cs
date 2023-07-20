@@ -7,7 +7,7 @@ namespace MovieApp.Repository.Interface
     public interface ICommentRepository
     {
         bool AddComments(AddComment addcomment);
-        bool DeleteComments(UpdateComment deletecomment);
+        bool DeleteComments(int CommentId);
         bool UpdateComments(UpdateComment updatecomment);
         UpdateComment GetById(int CommentId);
         List<UpdateComment> GetComments(int MovieId);

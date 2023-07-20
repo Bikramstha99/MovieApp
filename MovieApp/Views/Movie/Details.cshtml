@@ -75,7 +75,9 @@
     </span>
 </div>
 
- <partial name="../Rating/_AddRating" model="@Model?.Id" />    
+ <partial name="../Rating/_AddRating" model="@Model?.Id" />
+
+
 
 <hr />
 
@@ -89,12 +91,12 @@
         {
             <div>
                 <p>@comment.CommentDesc</p>
-                <small class="text-muted">Posted By @comment.CommentId @comment.IdentityUser.UserName on @comment.TimeStamp </small>
+                <small class="text-muted">Posted By @comment.CommentId @comment.UserName on @comment.TimeStamp </small>
                 <br>
                   
                   
                 <a class="btn-color-blue align-text-bottom" asp-action="Edit" asp-controller="Comment" asp-route-CommentId="@comment.CommentId">Edit</a> |
-                <a class="btn-color" asp-action="Delete" asp-controller="Comment" asp-route-Commentid="@comment.CommentId">Delete</a>
+                <a class="btn-color" asp-action="Delete" asp-controller="Comment" asp-route-CommentId="@comment.CommentId">Delete</a>
 
                 <hr>
             </div>
