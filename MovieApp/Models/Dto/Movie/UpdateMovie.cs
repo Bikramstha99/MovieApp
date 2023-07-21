@@ -1,5 +1,4 @@
-﻿using Microsoft.Build.Framework;
-using MovieApp.Models.Domain;
+﻿using MovieApp.Models.Domain;
 using MovieApp.Models.Dto.Comment;
 using MovieApp.Models.Dto.Pager;
 using MovieApp.Models.Dto.Rating;
@@ -11,15 +10,16 @@ namespace MovieApp.Models.Dto.Movie
     {
         [Key]
         public int Id { get; set; }
-        [System.ComponentModel.DataAnnotations.Required]
+        [Required]
         public string Name { get; set; }
-        [System.ComponentModel.DataAnnotations.Required]
+        [Required]
         public string Genre { get; set; }
 
-        [System.ComponentModel.DataAnnotations.Required]
+        [Required]
         public string Director { get; set; }
-        [System.ComponentModel.DataAnnotations.Required]
-        public int Year { get; set; }
+        [Required]
+        public string Description { get; set; }
+
 
         [DataType(DataType.Upload)]
         [Display(Name = "Insert an Image")]

@@ -4,6 +4,7 @@ using MovieApp.Models.Domain;
 using MovieApp.Models.Dto.Comment;
 using MovieApp.Models.Dto.Movie;
 using MovieApp.Repository.Interface;
+using System.ComponentModel.Design;
 using System.Data;
 
 namespace MovieApp.Repository.SPImplementation
@@ -95,6 +96,7 @@ namespace MovieApp.Repository.SPImplementation
                 using (SqlCommand command = new SqlCommand("spGetAllComment", connection))
                 {
                     command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@MovieId", MovieId);
 
                     connection.Open();
 

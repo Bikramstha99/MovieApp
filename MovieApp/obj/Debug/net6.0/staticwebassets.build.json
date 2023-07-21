@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "fFCyO9NGgKMWPIJc5HHpQk1LZlcPBW7axr2vXDW8s70=",
+  "Hash": "nEZib0J58hh/REqk/sM2/k2OavcN5FHdZUEFD8e9nVc=",
   "Source": "MovieApp",
   "BasePath": "_content/MovieApp",
   "Mode": "Default",
@@ -1205,6 +1205,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\386a16ec-9995-4e22-9eef-aefbcdf4f150.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Acer\\OneDrive\\Desktop\\C# console app\\MovieApp\\MovieApp\\wwwroot\\images\\38ae8e09-b9dc-4989-a853-75c82a552d6d.jpg",
+      "SourceId": "MovieApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Acer\\OneDrive\\Desktop\\C# console app\\MovieApp\\MovieApp\\wwwroot\\",
+      "BasePath": "_content/MovieApp",
+      "RelativePath": "images/38ae8e09-b9dc-4989-a853-75c82a552d6d.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\38ae8e09-b9dc-4989-a853-75c82a552d6d.jpg"
     },
     {
       "Identity": "C:\\Users\\Acer\\OneDrive\\Desktop\\C# console app\\MovieApp\\MovieApp\\wwwroot\\images\\72f84b44-8a41-45bd-99aa-9b46401796c7.jpg",
@@ -2431,6 +2448,40 @@
       "OriginalItemSpec": "wwwroot\\updateimages\\2fdaea22-5eb3-4342-8f26-e0b3a4419f99.jpg"
     },
     {
+      "Identity": "C:\\Users\\Acer\\OneDrive\\Desktop\\C# console app\\MovieApp\\MovieApp\\wwwroot\\updateimages\\2fecc47b-98a7-44b9-9c44-6e9ca05ae163.jpg",
+      "SourceId": "MovieApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Acer\\OneDrive\\Desktop\\C# console app\\MovieApp\\MovieApp\\wwwroot\\",
+      "BasePath": "_content/MovieApp",
+      "RelativePath": "updateimages/2fecc47b-98a7-44b9-9c44-6e9ca05ae163.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\updateimages\\2fecc47b-98a7-44b9-9c44-6e9ca05ae163.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Acer\\OneDrive\\Desktop\\C# console app\\MovieApp\\MovieApp\\wwwroot\\updateimages\\3e6750fb-74a9-43fe-aa86-75a7093b8419.jpg",
+      "SourceId": "MovieApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Acer\\OneDrive\\Desktop\\C# console app\\MovieApp\\MovieApp\\wwwroot\\",
+      "BasePath": "_content/MovieApp",
+      "RelativePath": "updateimages/3e6750fb-74a9-43fe-aa86-75a7093b8419.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\updateimages\\3e6750fb-74a9-43fe-aa86-75a7093b8419.jpg"
+    },
+    {
       "Identity": "C:\\Users\\Acer\\OneDrive\\Desktop\\C# console app\\MovieApp\\MovieApp\\wwwroot\\updateimages\\3efe6683-993f-4104-ad0d-27c8546d4e65.jpg",
       "SourceId": "MovieApp",
       "SourceType": "Discovered",
@@ -2446,6 +2497,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\updateimages\\3efe6683-993f-4104-ad0d-27c8546d4e65.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Acer\\OneDrive\\Desktop\\C# console app\\MovieApp\\MovieApp\\wwwroot\\updateimages\\44dc4349-78fb-438b-8335-cd37b6494be6.jpg",
+      "SourceId": "MovieApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Acer\\OneDrive\\Desktop\\C# console app\\MovieApp\\MovieApp\\wwwroot\\",
+      "BasePath": "_content/MovieApp",
+      "RelativePath": "updateimages/44dc4349-78fb-438b-8335-cd37b6494be6.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\updateimages\\44dc4349-78fb-438b-8335-cd37b6494be6.jpg"
     },
     {
       "Identity": "C:\\Users\\Acer\\OneDrive\\Desktop\\C# console app\\MovieApp\\MovieApp\\wwwroot\\updateimages\\5a3466a6-8944-4054-98ba-cded8723942a.jpg",
@@ -2584,6 +2652,23 @@
       "OriginalItemSpec": "wwwroot\\updateimages\\ab76c6b9-14ba-44ab-9079-309b19d7d2da.jpg"
     },
     {
+      "Identity": "C:\\Users\\Acer\\OneDrive\\Desktop\\C# console app\\MovieApp\\MovieApp\\wwwroot\\updateimages\\b3292965-79ef-4850-a65a-5a5689016738.jpg",
+      "SourceId": "MovieApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Acer\\OneDrive\\Desktop\\C# console app\\MovieApp\\MovieApp\\wwwroot\\",
+      "BasePath": "_content/MovieApp",
+      "RelativePath": "updateimages/b3292965-79ef-4850-a65a-5a5689016738.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\updateimages\\b3292965-79ef-4850-a65a-5a5689016738.jpg"
+    },
+    {
       "Identity": "C:\\Users\\Acer\\OneDrive\\Desktop\\C# console app\\MovieApp\\MovieApp\\wwwroot\\updateimages\\c7de99f0-5468-4139-9a18-912ca1810c56.jpg",
       "SourceId": "MovieApp",
       "SourceType": "Discovered",
@@ -2599,6 +2684,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\updateimages\\c7de99f0-5468-4139-9a18-912ca1810c56.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Acer\\OneDrive\\Desktop\\C# console app\\MovieApp\\MovieApp\\wwwroot\\updateimages\\ddbbe23e-39a0-4fa3-91eb-8c722cc2f20b.jpg",
+      "SourceId": "MovieApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Acer\\OneDrive\\Desktop\\C# console app\\MovieApp\\MovieApp\\wwwroot\\",
+      "BasePath": "_content/MovieApp",
+      "RelativePath": "updateimages/ddbbe23e-39a0-4fa3-91eb-8c722cc2f20b.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\updateimages\\ddbbe23e-39a0-4fa3-91eb-8c722cc2f20b.jpg"
     },
     {
       "Identity": "C:\\Users\\Acer\\OneDrive\\Desktop\\C# console app\\MovieApp\\MovieApp\\wwwroot\\updateimages\\f1dc54ba-b017-404e-b4b7-5b9724bccacd.jpg",

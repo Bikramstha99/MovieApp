@@ -16,5 +16,6 @@ namespace MovieApp.Models.Dto.Rating
         [ForeignKey("IdentityUser")]
         public string UserId { get; set; }
         public IdentityUser IdentityUser { get; set; }
+        public double AverageRating { get; set; }
     }
 }

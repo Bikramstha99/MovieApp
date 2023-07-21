@@ -27,6 +27,7 @@ namespace MovieApplication.Repository.Implementations
                 Genre = addmovie.Genre,
                 MoviePhoto = addmovie.MoviePhoto,
                 Director = addmovie.Director,
+                Description = addmovie.Description,
 
 
             };
@@ -46,6 +47,7 @@ namespace MovieApplication.Repository.Implementations
                 MoviePhoto = movie.MoviePhoto,
                 Director = movie.Director,
                 AverageRating = movie.AverageRating,
+                Description = movie.Description,
             };
             return viewmodel;
         }
@@ -58,6 +60,7 @@ namespace MovieApplication.Repository.Implementations
             movie.Genre = updatemovie.Genre;
             movie.MoviePhoto = updatemovie.MoviePhoto;
             movie.Director = updatemovie.Director;
+            movie.Description = updatemovie.Description;
             movie.AverageRating=updatemovie.AverageRating;
             _moviedbcontext.SaveChanges();
             return true;
@@ -79,7 +82,7 @@ namespace MovieApplication.Repository.Implementations
                 Name = d.Name,
                 Genre = d.Genre,
                 Director = d.Director,
-                Year = d.Year,
+                Description= d.Description,
                 MoviePhoto = d.MoviePhoto
             }).ToList();
             return data;

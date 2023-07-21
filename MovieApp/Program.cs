@@ -23,11 +23,20 @@ builder.Services.AddDefaultIdentity<IdentityUser>().AddDefaultTokenProviders()
     .AddRoles<IdentityRole>()
     .AddEntityFrameworkStores<MovieDbContext>();
 
+if (builder.Configuration.GetValue<bool>("UseSP")) //To either use EF or SP 
+{
+    builder.Services.AddScoped<ICommentRepository, SPCommentRepository>();
+    builder.Services.AddScoped<IRatingRepository, SPRatingRepository>();
+    builder.Services.AddScoped<IMovieRepository, SPMovieRepository>();
+}
+else
+{
+    builder.Services.AddScoped<ICommentRepository, CommentRepository>();
+    builder.Services.AddScoped<IRatingRepository, RatingRepository>();
+    builder.Services.AddScoped<IMovieRepository, MovieRepository>();
 
+}
 builder.Services.AddScoped<IDbInitializerRepository, DbInitializer>();
-builder.Services.AddScoped<ICommentRepository, SPCommentRepository>();
-builder.Services.AddScoped<IRatingRepository, SPRatingRepository>();
-builder.Services.AddScoped<IMovieRepository, SPMovieRepository>();
 
 var app = builder.Build();
 

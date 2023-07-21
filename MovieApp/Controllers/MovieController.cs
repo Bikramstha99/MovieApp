@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using MovieApp.Models.Domain;
 using MovieApp.Models.Dto.Comment;
 using MovieApp.Models.Dto.Movie;
@@ -78,13 +79,14 @@ namespace MovieApp.Controllers
             return RedirectToAction("Index");
 
         }
+        [Authorize(Roles ="Admin")]
         [HttpGet]
         public IActionResult Edit(int Id)
         {
             var movie = _IMovie.GetByID(Id);
             return View(movie);
         }
-
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         public IActionResult Edit(UpdateMovie updatemovie)
         {

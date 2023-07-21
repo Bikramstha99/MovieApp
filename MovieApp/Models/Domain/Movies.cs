@@ -18,7 +18,7 @@ namespace MovieApp.Models.Domain
         [Required]
         public string Director { get; set; }
         [Required]
-        public int Year { get; set; }
+        public string Description { get; set; }
 
 
         [Display(Name = "Insert an Image")]

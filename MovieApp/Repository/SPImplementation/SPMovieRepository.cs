@@ -27,7 +27,7 @@ namespace MovieApp.Repository.SPImplementation
                     command.Parameters.AddWithValue("@Genre", addmovie.Genre);
                     command.Parameters.AddWithValue("@MoviePhoto", addmovie.MoviePhoto);
                     command.Parameters.AddWithValue("@Director", addmovie.Director);
-                    command.Parameters.AddWithValue("@Year", addmovie.Year);
+                    command.Parameters.AddWithValue("@Description", addmovie.Description);
 
                     connection.Open();
                     command.ExecuteNonQuery();
@@ -65,7 +65,7 @@ namespace MovieApp.Repository.SPImplementation
                     command.Parameters.AddWithValue("@Director", updatemovie.Director != null ? updatemovie.Director : DBNull.Value);
                     command.Parameters.AddWithValue("@MoviePhoto", updatemovie.MoviePhoto != null ? updatemovie.MoviePhoto : DBNull.Value);
                     command.Parameters.AddWithValue("@AverageRating", updatemovie.AverageRating != null ? updatemovie.AverageRating : DBNull.Value);
-                    command.Parameters.AddWithValue("@Year", updatemovie.Year);
+                    command.Parameters.AddWithValue("@Description", updatemovie.Description);
 
                     // Add any other parameters required by the stored procedure, if applicable
 
@@ -108,7 +108,8 @@ namespace MovieApp.Repository.SPImplementation
                                     Director = reader["Director"].ToString(),
                                     Genre = reader["Genre"].ToString(),
                                     MoviePhoto = reader["MoviePhoto"].ToString(),
-                                    AverageRating = Convert.ToDouble(reader["AverageRating"])
+                                    AverageRating = Convert.ToDouble(reader["AverageRating"]),
+                                    Description= reader["Description"].ToString(),
                                 };
                                 movies.Add(movie);
                             }
@@ -142,7 +143,8 @@ namespace MovieApp.Repository.SPImplementation
                                     Director = reader["Director"].ToString(),
                                     Genre = reader["Genre"].ToString(),
                                     MoviePhoto = reader["MoviePhoto"].ToString(),
-                                    AverageRating = Convert.ToDouble(reader["AverageRating"])
+                                    AverageRating = Convert.ToDouble(reader["AverageRating"]),
+                                    Description= reader["Description"].ToString(),
                                 };
                             }
                         }
