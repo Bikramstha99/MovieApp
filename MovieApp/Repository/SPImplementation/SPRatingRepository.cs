@@ -41,6 +41,7 @@ namespace MovieApp.Repository.SPImplementation
         public double GetAverageRating(int MovieId)
         {
             throw new NotImplementedException();
+
         }
 
         public int GetRatingByUserIdAndMovieId(string UserId, int MovieId)
@@ -70,9 +71,6 @@ namespace MovieApp.Repository.SPImplementation
                                 Ratings = (int)reader["Ratings"],
                                 UserId = reader["UserId"].ToString(),
                                 MovieId = (int)reader["MovieId"],
-                             
-
-
                             };
                             ratings.Add(rating);
                         }
