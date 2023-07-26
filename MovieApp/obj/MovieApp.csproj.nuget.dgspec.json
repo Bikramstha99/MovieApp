@@ -1,24 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Acer\\OneDrive\\Desktop\\C# console app\\MovieApp\\MovieApp\\MovieApp.csproj": {}
+    "C:\\Users\\Acer\\OneDrive\\Desktop\\C#consoleapp\\MovieApp\\MovieApp\\MovieApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Acer\\OneDrive\\Desktop\\C# console app\\MovieApp\\MovieApp\\MovieApp.csproj": {
+    "C:\\Users\\Acer\\OneDrive\\Desktop\\C#consoleapp\\MovieApp\\MovieApp\\MovieApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Acer\\OneDrive\\Desktop\\C# console app\\MovieApp\\MovieApp\\MovieApp.csproj",
+        "projectUniqueName": "C:\\Users\\Acer\\OneDrive\\Desktop\\C#consoleapp\\MovieApp\\MovieApp\\MovieApp.csproj",
         "projectName": "MovieApp",
-        "projectPath": "C:\\Users\\Acer\\OneDrive\\Desktop\\C# console app\\MovieApp\\MovieApp\\MovieApp.csproj",
+        "projectPath": "C:\\Users\\Acer\\OneDrive\\Desktop\\C#consoleapp\\MovieApp\\MovieApp\\MovieApp.csproj",
         "packagesPath": "C:\\Users\\Acer\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Acer\\OneDrive\\Desktop\\C# console app\\MovieApp\\MovieApp\\obj\\",
+        "outputPath": "C:\\Users\\Acer\\OneDrive\\Desktop\\C#consoleapp\\MovieApp\\MovieApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Acer\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net6.0"
+          "net7.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -26,8 +26,8 @@
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net6.0": {
-            "targetAlias": "net6.0",
+          "net7.0": {
+            "targetAlias": "net7.0",
             "projectReferences": {}
           }
         },
@@ -38,8 +38,8 @@
         }
       },
       "frameworks": {
-        "net6.0": {
-          "targetAlias": "net6.0",
+        "net7.0": {
+          "targetAlias": "net7.0",
           "dependencies": {
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",

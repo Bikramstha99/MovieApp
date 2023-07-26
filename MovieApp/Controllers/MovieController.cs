@@ -63,17 +63,17 @@ namespace MovieApp.Controllers
         [HttpPost]
         public IActionResult Create(AddMovie addmovie)
         {
-            var image = Request.Form.Files.FirstOrDefault();
-            var fileName = Guid.NewGuid().ToString();
-            var path = $@"images\";
-            var wwwRootPath = _iwebhostenvironment.WebRootPath;
-            var uploads = Path.Combine(wwwRootPath, path);
-            var extension = Path.GetExtension(image.FileName);
-            using (var fileStreams = new FileStream(Path.Combine(uploads, fileName + extension), FileMode.Create))
-            {
-                image.CopyTo(fileStreams);
-            }
-            addmovie.MoviePhoto = $"\\images\\{fileName}" + extension;
+            //var image = Request.Form.Files.FirstOrDefault();
+            //var fileName = Guid.NewGuid().ToString();
+            //var path = $@"images\";
+            //var wwwRootPath = _iwebhostenvironment.WebRootPath;
+            //var uploads = Path.Combine(wwwRootPath, path);
+            //var extension = Path.GetExtension(image.FileName);
+            //using (var fileStreams = new FileStream(Path.Combine(uploads, fileName + extension), FileMode.Create))
+            //{
+            //    image.CopyTo(fileStreams);
+            //}
+            //addmovie.MoviePhoto = $"\\images\\{fileName}" + extension;
             _IMovie.AddMovies(addmovie);
 
             return RedirectToAction("Index");
