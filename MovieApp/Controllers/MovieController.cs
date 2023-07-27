@@ -74,10 +74,15 @@ namespace MovieApp.Controllers
             //    image.CopyTo(fileStreams);
             //}
             //addmovie.MoviePhoto = $"\\images\\{fileName}" + extension;
-            _IMovie.AddMovies(addmovie);
-
-            return RedirectToAction("Index");
-
+            if ((string.IsNullOrEmpty(addmovie.Name) || string.IsNullOrEmpty(addmovie.Genre)))
+            {
+                return View("Create", addmovie);
+            }
+            else
+            {
+                _IMovie.AddMovies(addmovie);
+                return RedirectToAction("Index");
+            }
         }
         [Authorize(Roles ="Admin")]
         [HttpGet]

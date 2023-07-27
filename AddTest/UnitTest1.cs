@@ -22,14 +22,14 @@ namespace MovieApp.Tests
             var ratingRepositoryMock = new Mock<IRatingRepository>();
 
             var movieController = new MovieController(movieRepositoryMock.Object, hostingEnvironmentMock.Object, commentRepositoryMock.Object, ratingRepositoryMock.Object);
-            movieController.ControllerContext = new ControllerContext
-            {
-                HttpContext = new DefaultHttpContext()
-            };
+            ////movieController.ControllerContext = new ControllerContext
+            ////{
+            ////    HttpContext = new DefaultHttpContext()
+            ////};
             var addMovie = new AddMovie
             {
                 Name = "Test Movie",
-                Genre = "Action",
+                Genre="anIme",
                 Director = "John Doe",
                 Description = "This is a test movie for unit testing.",
                 MoviePhoto ="~/images/testmovie.jpg"
@@ -48,5 +48,37 @@ namespace MovieApp.Tests
             var redirectToActionResult = Assert.IsType<RedirectToActionResult>(result);
             Assert.Equal("Index", redirectToActionResult.ActionName);
         }
+        [Fact]
+        public void Create_Post_InvalidModel_ReturnsViewWithInvalidModel()
+        {
+            // Arrange
+            var movieRepositoryMock = new Mock<IMovieRepository>();
+            var hostingEnvironmentMock = new Mock<IWebHostEnvironment>();
+            var commentRepositoryMock = new Mock<ICommentRepository>();
+            var ratingRepositoryMock = new Mock<IRatingRepository>();
+
+            var movieController = new MovieController(movieRepositoryMock.Object, hostingEnvironmentMock.Object, commentRepositoryMock.Object, ratingRepositoryMock.Object);
+
+            // Invalid model with missing required fields
+            var invalidAddMovie = new AddMovie
+            {
+                // Missing the "Name" and "Genre" properties
+                Director = "John Doe",
+                Description = "This is a test movie for unit testing.",
+                MoviePhoto = "~/images/testmovie.jpg"
+            };
+
+            // Act
+            var result = movieController.Create(invalidAddMovie);
+
+            // Assert
+            movieRepositoryMock.Verify(x => x.AddMovies(It.IsAny<AddMovie>()), Times.Never);
+            var viewResult = Assert.IsType<ViewResult>(result);
+            Assert.Equal("Create", viewResult.ViewName);
+            Assert.NotNull(viewResult.Model); // Ensure the view model is not null
+            Assert.IsType<AddMovie>(viewResult.Model); // Ensure the view model is of type AddMovie
+        }
     }
+
 }
+
